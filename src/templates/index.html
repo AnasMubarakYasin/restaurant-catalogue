@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Catalog Restaurant">
+    <title>FoodHunt | Catalog Restaurant</title>
+</head>
+<body>
+	<button class="btn-skip" title="to content">
+		<span class="text">Skip</span>
+		<i class="md-icons">arrow_forward</i>
+	</button>
+  <header class="jumbotron">
+		<img
+			loading="lazy" decoding="async" class="img"
+			srcset="../public/images/heros/hero-image_3-480.jpg 480w,
+							../public/images/heros/hero-image_3-720.jpg 720w,
+							../public/images/heros/hero-image_3.jpg 1360w"
+			sizes="(max-width: 600px) 480px,
+						 (max-width: 1080px) 720px,
+						 1360px"
+			src="../public/images/heros/hero-image_3.jpg" alt="hero"> 
+    <nav class="topnav">
+      <button class="md-icons btn" aria-label="open menu">menu</button>
+			<img loading="lazy" decoding="async" class="logo" src="../public/images/logo/foodhunt.svg" alt="foodhunt" width="44" height="44">
+			<h1 class="title">FoodHunt</h1>
+			<ul class="link-list">
+				<li class="link-item">
+					<a class="link" href="#" data-route="home">Home</a>
+				</li>
+				<li class="link-item">
+					<a class="link" href="#" data-route="favorite">Favorites</a>
+				</li>
+				<li class="link-item">
+					<a class="link" href="#" data-route="about">About</a>
+				</li> 
+			</ul>
+		</nav>
+		<div class="content">
+			<h1 class="title">Find Restaurant which can arous your taste</h1>
+			<h2 class="subtitle">Hello Foodie, we provide list of Restaurants where you can choose and try their food.</h2>
+		</div>
+	</header>
+	<aside class="sidenav">
+		<ul class="list">
+			<li class="list-item">
+				<img loading="lazy" decoding="async" class="logo" src="../public/images/logo/foodhunt.svg" alt="logo-foodhunt"  width="44" height="44">
+				<h1 class="title">FoodHunt</h1>
+				<button class="md-icons btn-close" aria-label="close menu">close</button>
+			</li>
+		</ul>
+		<hr>
+		<ul class="link-list">
+			<li class="link-item">
+				<a href="#" data-route="home">
+					<i class="md-icons btn">home</i>
+					<span>Home</span>
+				</a>
+			</li>
+			<li class="link-item">
+				<a href="#" data-route="favorite">
+					<i class="md-icons btn">favorite</i>
+					<span>Favorites</span>
+				</a>
+			</li>
+			<li class="link-item">
+				<a href="#" data-route="about">
+					<i class="md-icons btn">info</i>
+					<span>About</span>
+				</a>
+			</li> 
+		</ul>
+	</aside>
+	<main id="content"></main>
+	<div class="overlay"></div>
+	<footer class="footer">
+		<p class="text">Copyright &copy; 2020 Food Hunt, All Right Reserved.</p>
+	</footer>
+</body>
+</html>

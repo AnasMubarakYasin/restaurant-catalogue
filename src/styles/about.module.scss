@@ -1,0 +1,131 @@
+@use '_default' as def;
+
+@import '../public/fonts/custom-fonts/style.css';
+
+.wrapper {
+  display: flex;
+  flex-flow: column wrap;
+
+  @media #{def.$media-medium-up} {
+    flex-flow: row nowrap;
+  }
+
+  .img-wrapper {
+    flex-basis: 30%;
+    display: flex;
+    flex-flow: column wrap;
+    flex-shrink: 0;
+    align-items: center;
+    margin: 8px;
+    padding: 16px;
+    border-radius: 8px;
+    background-color: darken($color: def.$surface-color, $amount: 4);
+
+    
+    .img {
+      display: flex;
+      place-items: center;
+      margin: 16px auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px #545454 solid;
+
+      :global .md-icons.person {
+        margin: auto;
+        font-size: 148px;
+        color: #545454;
+
+      }
+    }
+    .title {
+      @include def.heading-custom(22px);
+      margin: 16px auto;
+    }
+    .description {
+      @include def.reset-margin-padding;
+      margin: 4px;
+      padding: 24px;
+      opacity: .9;
+    }
+  }
+  .content {
+    margin: 24px 16px;
+    display: flex;
+    flex-flow: column wrap;
+
+    .link {
+      display: inherit;
+      flex-flow: inherit;
+      margin: 8px 0;
+
+      .list {
+        display: inherit;
+        flex-flow: inherit;
+
+        .item {
+          margin: 4px 0;
+          border: 1px rgba(0, 0, 0, 0.100) solid;
+          border-radius: 8px;
+          min-height: def.$min-size-accessibility;
+
+          &:hover {
+            background-color: darken($color: def.$surface-color, $amount: 11%);
+          }
+
+          .link {
+            @include def.link-custom(0, 0);
+            padding: 0 24px;
+            line-height: 3;
+            opacity: .7;
+            width: auto;
+            
+            .text {
+              @include def.text-limit(1);
+            }
+          }
+        }
+      }
+    }
+
+    .tech {
+      display: inherit;
+      flex-flow: inherit;
+      margin: 8px 0;
+
+      .list {
+        display: inherit;
+        flex-flow: row wrap;
+        margin: 4px 0;
+
+        .item {
+          margin: 8px;
+          min-width: 88px;
+          min-height: 88px;
+          border: 1px rgba(0, 0, 0, 0.100) solid;
+          border-radius: 8px;
+          display: flex;
+
+          &:hover {
+            background-color: darken($color: def.$surface-color, $amount: 11%);
+          }
+
+          :global .custom-icons {
+            margin: auto;
+            font-size: 42px;
+          }
+        }
+      }
+    }
+
+    & .title {
+      @include def.heading-custom(24px);
+    }
+
+    & .subtitle {
+      @include def.heading-custom(18px);
+      opacity: .7;
+      margin: 8px 0;
+    }
+  }
+}

@@ -1,0 +1,834 @@
+@use '_default' as def;
+
+@mixin card-type-module {
+  .card-item.module {
+    @include def.box-shadow();
+    position: relative;
+    margin: 8px;
+    border-radius: 8px;
+    max-width: 400px;
+
+    @media #{def.$media-small-up} {
+      max-width: 310px;
+    }
+  
+    .img-wrapper {
+      display: flex;
+      position: inherit;
+      border-radius: inherit;
+  
+      .btn-favorite {
+        @include def.btn-custom(def.$red-color, transparent, 12px);
+        position: absolute;
+        right: 0;
+        border: none;
+        border-radius: inherit;
+        -webkit-backdrop-filter: brightness(1.5) blur(10px);
+                backdrop-filter: brightness(1.5) blur(10px);
+        transition: -webkit-backdrop-filter 300ms ease;
+        transition: backdrop-filter 300ms ease;
+        transition: backdrop-filter 300ms ease, -webkit-backdrop-filter 300ms ease;
+
+        @supports not ((-webkit-backdrop-filter: brightness(0) blur(0)) or (backdrop-filter: brightness(0) blur(0))) {
+          &::before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            background-color: def.$surface-color;
+          }
+          .md-icons {
+            z-index: 1;
+          }
+        }
+
+        &:hover {
+          -webkit-backdrop-filter: brightness(.8) blur(10px);
+                  backdrop-filter: brightness(.8) blur(10px);
+          border: 2px def.$primary-color solid;
+        }
+        &:focus {
+          outline: none;
+          border: 2px def.$primary-color solid;
+        }
+      }
+  
+      .location {
+        position: absolute;
+        bottom: 0;
+        margin: 12px;
+        padding: 4px 12px;
+        color: white;
+        display: grid;
+        grid-template-columns: auto;
+        grid-auto-flow: column;
+        -moz-column-gap: 4px;
+             column-gap: 4px;
+        place-items: center;
+        place-content: center;
+        border-radius: 16px / 50%;
+        font-size: 14px;
+        max-width: 80%;
+        -webkit-backdrop-filter: blur(10px) brightness(.8);
+                backdrop-filter: blur(10px) brightness(.8);
+
+        @supports not ((-webkit-backdrop-filter: brightness(0) blur(0)) or (backdrop-filter: brightness(0) blur(0))) {
+          &::before {
+            content: " ";
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: inherit;
+            background-color: def.$on-surface;
+          }
+          .md-icons, .text {
+            z-index: 1;
+          }
+        }
+        
+        :global .md-icons {
+          color: def.$secondary-color;
+        }
+        .text {
+          @include def.text-limit();
+        }
+      }
+      
+      .img {
+        @include def.object(cover, bottom center);
+        display: inline-block;
+        border-radius: inherit;
+        width: 100%;
+        height: 210px;
+      }
+    }
+
+    .content-wrapper {
+      padding: 12px;
+      display: flex;
+      flex-flow: column wrap;
+      color: def.$on-surface;
+  
+      .title {
+        @include def.heading-custom(28px, 500);
+
+        display: flex;
+        align-items: center;
+        min-height: def.$min-size-accessibility;
+        
+        .link {
+          @include def.reset-anchor;
+          @include def.text-limit();
+
+          &:hover {
+            text-decoration: underline;
+            color: def.$primary-color;
+          }
+
+          &:active {
+            color: def.$red-color;
+          }
+        }
+      }
+      .subtitle {
+        @include def.heading-custom(18px, 500);
+
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: -webkit-min-content;
+        grid-template-columns: min-content;
+        -moz-column-gap: 8px;
+             column-gap: 8px;
+        margin: 4px 0;
+        opacity: .7;
+
+        .rating, .review {
+          margin: inherit;
+          padding: inherit;
+          font-size: inherit;
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: -webkit-min-content;
+          grid-auto-columns: min-content;
+          align-items: center;
+          -moz-column-gap: 4px;
+               column-gap: 4px;
+    
+          .md-icons {
+            display: block;
+            color: def.$secondary-color;
+            width: 24px;
+            // -webkit-filter: brightness(1.3);
+                    // filter: brightness(1.3);
+          }
+    
+          .text {
+            @include def.reset-margin-padding;
+
+            display: block;
+            font-size: inherit;
+            font-weight: inherit;
+            margin: 0 4px;
+          }
+        }
+        .review {
+          .md-icons {
+            font-size: 22px;
+          }
+        }
+
+        .location {
+          display: none;
+        }
+      }
+
+      .subtitle-2 {
+        @include def.heading-custom(16px, 500);
+        @include def.text-limit();
+        margin: 4px 0;
+        opacity: .7;
+      }
+
+      .description {
+        @include def.reset-margin-padding;
+        @include def.text-limit(3);
+        
+        color: def.$on-surface;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.6;
+      }
+    }
+  }
+}
+
+@mixin card-type-module-load {
+  .card-item.module.loading {
+    .img-wrapper {
+      .img {
+        @include loading-sekeleton();
+      }
+      .location {
+        @include loading-sekeleton(8);
+
+        :global .md-icons {
+          visibility: hidden;
+        }
+      }
+
+      .btn-favorite {
+        @include loading-sekeleton(8);
+
+        .md-icons {
+          visibility: hidden;
+        }
+      }
+    }
+    .content-wrapper {
+      .title {
+        .link {
+          @include loading-sekeleton();
+
+          &::before {
+            content: "Title Card";
+            visibility: hidden;
+          }
+        }
+      }
+
+      .subtitle {
+        grid-template-columns: repeat(2, 70px);
+
+        .rating, .review {
+          @include loading-sekeleton();
+
+          :global .md-icons {
+            visibility: hidden;
+          }
+          .text {
+            &::before {
+              content: "Rating";
+              visibility: hidden;
+            }
+          } 
+        }
+      }
+      .subtitle-2 {
+        @include loading-sekeleton();
+
+        color: transparent;
+        width: 40%;
+      }
+      .description {
+        @include loading-sekeleton();
+
+        color: transparent;
+      }
+    }
+  }
+}
+@mixin card-type-list {
+  .card-item.list {
+    @include def.box-shadow();
+
+    margin: 8px;
+    display: flex;
+    flex-flow: row nowrap;
+    border-radius: 8px;
+    width: 100%;
+    max-height: 124px;
+    overflow: hidden;
+
+    @media #{def.$media-small-up} {
+      width: 90%;
+    }
+
+    @media #{def.$media-medium-up} {
+      width: 45%;
+    }
+  
+    .img-wrapper {
+      position: relative;
+      display: flex;
+      transition: all .3s ease 0s;
+
+      &::before {
+        content: "";
+        transition: all .3s ease 0s;
+      }
+
+      &:hover {
+        &::before {
+          border-radius: 8px;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          content: "";
+          -webkit-backdrop-filter: brightness(.5) blur(1px);
+                  backdrop-filter: brightness(.5) blur(1px);
+        }
+
+        .btn-favorite {
+          @include def.btn-custom(def.$red-color, transparent);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border: none;
+          border-radius: 8px;
+          transition: -webkit-backdrop-filter 300ms ease 0s;
+          transition: backdrop-filter 300ms ease 0s;
+          transition: backdrop-filter 300ms ease 0s, -webkit-backdrop-filter 300ms ease 0s;
+          -webkit-backdrop-filter: brightness(2) blur(16px);
+                  backdrop-filter: brightness(2) blur(16px);
+
+          @supports not ((-webkit-backdrop-filter: brightness(0) blur(0)) or (backdrop-filter: brightness(0) blur(0))) {
+            &::before {
+              content: " ";
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              border-radius: inherit;
+              background-color: def.$surface-color;
+            }
+            .md-icons {
+              z-index: 1;
+            }
+          }
+
+          // .md-icons {
+            // -webkit-filter: brightness(1.3);
+                    // filter: brightness(1.3);
+          // }
+          
+          &:hover {
+            border: 2px def.$primary-color solid;
+            -webkit-backdrop-filter: brightness(1.2) blur(16px);
+                    backdrop-filter: brightness(1.2) blur(16px);
+          }
+          &:focus {
+            outline: none;
+            border: 2px def.$primary-color solid;
+          }
+        }
+      }
+
+      .img {
+        @include def.object(cover, bottom center);
+        display: inline-block;
+        width: 124px;
+        height: 124px;
+        border-radius: 8px;
+      }
+    }
+    .content-wrapper {
+      margin: auto 8px;
+      // padding: 4px 0;
+      display: inherit;
+      flex-flow: column nowrap;
+
+    @media #{def.$media-small-up} {
+      margin-left: 16px;
+    }
+  
+      .title {
+        @include def.heading-custom(24px, 500, def.$on-surface);
+        display: inherit;
+        align-items: center;
+        font-weight: 500;
+        font-size: 24px;
+        min-height: def.$min-size-accessibility;
+  
+        .link {
+          @include def.reset-anchor;
+          @include def.text-limit();
+  
+          &:hover {
+            text-decoration: underline;
+            color: def.$primary-color;
+          }
+  
+          &:active {
+            color: def.$red-color;
+          }
+        }
+      }
+      .subtitle {
+        @include def.heading-custom(18px, 500);
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: auto;
+        -moz-column-gap: 8px;
+             column-gap: 8px;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+
+        @media #{def.$media-small-up} {
+          -moz-column-gap: 16px;
+               column-gap: 16px;
+        }
+        
+        .location , .rating, .review {
+          @include def.reset-margin-padding;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          :global .md-icons {
+            width: 24px;
+            // -webkit-filter: brightness(1.3);
+                    // filter: brightness(1.3);
+          }
+          .text {
+            @include def.text-limit();
+          }
+        }
+        .location {
+
+          @media #{def.$media-xsmall-down} {
+            display: none;
+          }
+
+          .md-icons {
+            color: def.$secondary-color;
+          }
+        }
+        .review {
+
+          .md-icons {
+            color: def.$secondary-color;
+            font-size: 22px;
+          }
+        }
+        .rating {
+          
+          .md-icons {
+            color: def.$secondary-color;
+          }
+          .md-icons:not(:first-child) {
+            display: none;
+          }
+        }
+        & .md-icons {
+          margin-right: 4px;
+        }
+        & .text {
+          color: def.$on-surface;
+          font-weight: 500;
+          font-size: 18px;
+        }
+      }
+      .description {
+        @include def.reset-margin-padding;
+        @include def.text-limit();
+
+        color: def.$on-surface;
+        margin: 8px 0;
+        font-weight: 500;
+        font-size: 16px;
+        opacity: .7;
+      }
+    }
+  }
+}
+@mixin card-type-list-load {
+  .card-item.list.loading {
+    .img-wrapper {
+      .img {
+        @include loading-sekeleton();
+      }
+      .location {
+        @include loading-sekeleton(8);
+        :global .md-icons {
+          visibility: hidden;
+        }
+      }
+      .btn-favorite {
+        @include loading-sekeleton(8);
+        .md-icons {
+          visibility: hidden;
+        }
+      }
+    }
+    .content-wrapper {
+      .title {
+        .link {
+          @include loading-sekeleton();
+          &::before {
+            content: "Title Card";
+            visibility: hidden;
+          }
+        }
+      }
+      .subtitle {
+        grid-template-columns: repeat(3, 70px);
+        .rating, .review, .location {
+          @include loading-sekeleton();
+          .md-icons {
+            visibility: hidden;
+          }
+          .text {
+            &::before {
+              content: "Rating";
+              visibility: hidden;
+            }
+          } 
+        }
+      }
+      .subtitle-2 {
+        @include loading-sekeleton();
+        color: transparent;
+        width: 40%;
+      }
+      .description {
+        @include loading-sekeleton();
+        color: transparent;
+      }
+    }
+  }
+}
+@mixin option {
+  @include def.box-shadow();
+  position: -webkit-sticky;
+  position: sticky;
+  top: 8px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  color: def.$on-surface;
+  background-color: def.$surface-color;
+  z-index: 2;
+
+  .order {
+    position: relative;
+    flex: 1 0 auto;
+
+    .btn {
+      @include def.btn-custom(inherit, white, 0, 0 16px, 8px);
+      position: relative;
+      border: 1px rgba(0, 0, 0, 0.100) solid;
+      border-radius: 8px;
+      z-index: 1;
+      transition: box-shadow 300ms ease;
+
+      &:hover {
+        box-shadow: 0 0 0 2px def.$primary-color;
+
+        .text {
+          opacity: 1;
+        }
+      }
+      .text {
+        font-weight: 400;
+        font-size: 16px;
+        opacity: .7;
+      }
+      .md-icons {
+        justify-self: end;
+        opacity: .7;
+      }
+    }
+    .list {
+      @include def.reset-list-style;
+      position: absolute;
+      top: 0;
+      transform-origin: top;
+      transform: translate(0, 0) scale(0, 0);
+      visibility: hidden;
+      display: flex;
+      flex-flow: column;
+      padding: 8px 0;
+      background-color: def.$surface-color;
+      border: 1px rgba(0, 0, 0, 0.100) solid;
+      border-radius: 8px;
+      overflow: hidden;
+      will-change: transform, visibility;
+
+      .item {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background-color: darken($color: def.$surface-color, $amount: 10%);
+        }
+        .link {
+          @include def.link-custom(0, 0 16px);
+        }
+      }
+    }
+
+    .list.show {
+      -webkit-animation: show 1s ease 0s 1 normal forwards;
+              animation: show 1s ease 0s 1 normal forwards;
+    }
+    .list.hide {
+      -webkit-animation: hide 1s ease 0s 1 normal forwards;
+              animation: hide 1s ease 0s 1 normal forwards;
+    }
+    @-webkit-keyframes show {
+      0% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      25% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      100% {
+        visibility: visible;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+    }
+    @keyframes show {
+      0% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      25% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      100% {
+        visibility: visible;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+    }
+    @-webkit-keyframes hide {
+      0% {
+        visibility: visible;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      25% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      100% {
+        visibility: hidden;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+    }
+    @keyframes hide {
+      0% {
+        visibility: visible;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      25% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      100% {
+        visibility: hidden;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+    }
+  }
+  .view {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    -moz-column-gap: 4px;
+         column-gap: 4px;
+
+    .btn {
+      @include def.btn-custom();
+      border-radius: 8px;
+      border: 1px rgba(0, 0, 0, 0.100) solid;
+      opacity: .7;
+      transition: box-shadow 300ms ease;
+
+      &:hover {
+        box-shadow: 0 0 0 2px def.$primary-color;
+        opacity: 1;
+      }
+    }
+  }
+}
+@mixin card-list {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+
+  .card-item {
+    color: def.$surface-color;
+
+    .img-wrapper {
+
+      .img {
+        background-color: darken($color: def.$surface-color, $amount: 60);
+      }
+  
+      .btn-favorite {
+        display: none;
+      }
+  
+      .location {
+        display: none;
+      }
+      
+      .img {
+        display: none;
+      }
+    }
+    .content-wrapper {
+  
+      .title {
+        display: none;
+      }
+      .subtitle {
+        display: none;
+      }
+      .subtitle-2 {
+        display: none;
+      }
+      .description {
+        display: none;
+      }
+    }
+  }
+  @include card-type-module;
+  @include card-type-module-load();
+  @include card-type-list;
+  @include card-type-list-load();
+}
+@mixin btn-load {
+  // @include def.btn-custom(lighten($color: def.$on-primary, $amount: 30), def.$background-color, 8px auto, 0 8px);
+  @include def.btn-custom(def.$on-background, def.$background-color, 8px auto, 0 8px);
+  @include def.box-shadow();
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  font-weight: 600;
+  border: 2px solid def.$tersier-color;
+  border-radius: 8px;
+  // border: 2px solid transparent;
+  opacity: .7;
+  transition: all .3s ease;
+
+
+  @media #{def.$media-small-up} {
+    font-weight: 600;
+  }
+
+  &:hover {
+    background-color: transparent;
+    border: 2px solid def.$primary-color;
+    opacity: 1;
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid def.$tersier-color;
+  }
+  &:active {
+    background-color: lighten($color: def.$on-background, $amount: 90%);
+  }
+}
+@mixin loading-sekeleton($depth: 1) {
+  color: transparent;
+  background: linear-gradient(to right, 
+    darken($color: white, $amount: $depth + 6),
+    darken($color: white, $amount: $depth + 12),
+    darken($color: white, $amount: $depth + 6),
+    darken($color: white, $amount: $depth + 12)
+  );
+  background-size: 500% 100%;
+  -webkit-animation: loading 3s linear 0s infinite normal forwards running;
+          animation: loading 3s linear 0s infinite normal forwards running;
+  @-webkit-keyframes loading {
+    0% {
+      background-position: 0%;
+    }
+    50% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
+  @keyframes loading {
+    0% {
+      background-position: 0%;
+    }
+    50% {
+      background-position: 100%;
+    }
+    100% {
+      background-position: 0%;
+    }
+  }
+}
+
+.cards {
+  // margin: 8px;
+  display: flex;
+  flex-flow: column wrap;
+
+  // .option {
+  //   @include option();
+  // }
+
+  .card-list {
+    @include card-list();
+  }
+  
+  // .btn-load {
+  //   @include btn-load();
+  // }
+}
+.btn-load {
+  @include btn-load();
+}

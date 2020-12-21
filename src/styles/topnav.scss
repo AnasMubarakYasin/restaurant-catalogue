@@ -1,0 +1,129 @@
+@use '_default' as def;
+
+.topnav {
+  position: relative;
+  z-index: 1;
+  color: white;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  padding: 0 8px;
+
+  @media #{def.$media-small-up} {
+    padding: 0 24px;
+  }
+  @media #{def.$media-medium-down} {
+    height: 56px;
+  }
+  @media #{def.$media-medium-up} {
+    padding: 0 48px;
+    height: 68px;
+  }
+
+  .btn {
+    @include def.btn-custom(inherit, transparent);
+    position: absolute;
+    color: inherit;
+    background-color: transparent;
+    border: none;
+
+    @media #{def.$media-small-up} {
+      display: none;
+    }
+  }
+  .logo {
+    margin: auto;
+    width: def.$min-size-accessibility;
+    height: def.$min-size-accessibility;
+
+    @media #{def.$media-small-down} {
+      display: none;
+    }
+  }
+  .title {
+    @include def.heading-custom(28px);
+    margin: auto;
+    flex: 0 0 auto;
+
+    @media #{def.$media-xsmall-down} {
+      font-size: 24px;
+    }
+    @media #{def.$media-small-up} {
+      margin: auto 12px;
+      font-size: 32px;
+      flex: 1 0 auto;
+    }
+  }
+  .link-list {
+    @include def.reset-list-style;
+    display: none;
+
+    @media #{def.$media-medium-up} {
+      display: inherit;
+    }
+
+    .link-item {
+      margin: 0 12px;
+      display: inherit;
+      place-items: center;
+
+      .link {
+        @include def.link-custom(0, 0 8px, darken($color: white, $amount: 30%));
+        position: relative;
+        font-weight: 400;
+        font-size: 18px;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: color 300ms ease;
+
+        &::after {
+          content: "";
+          border-top-left-radius: 16px;
+          border-top-right-radius: 16px;
+          border-top: 3px def.$primary-color solid;
+          will-change: transform;
+          transition: transform 300ms ease;
+          transform: translate(-50%, 3px);
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          background-color: def.$primary-color;
+          width: 70%;
+          height: 0;
+        }
+        &:focus {
+          color: white;
+          @extend .active;
+        }
+        &:hover {
+          color: white;
+          @extend .active;
+        }
+      }
+    }
+    .active, .link-item.active {
+      &, .link {
+        &::after {
+          transform: translate(-50%, 0);
+        }
+      }
+    }
+  }
+}
+
+.topnav.small {
+  @extend .topnav;  
+  color: def.$on-primary;
+
+  .link-list {
+    .link-item {
+      .link {
+        color: def.$on-primary;
+        &::after {
+          border-top: 3px white solid;
+        }
+      }
+    }
+  }
+}

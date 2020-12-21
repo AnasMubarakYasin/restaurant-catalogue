@@ -1,0 +1,23 @@
+@use '_default' as def;
+
+.btn-skip {
+  @include def.btn-custom(white, transparent, 0, 0 16px);
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-size: 18px;
+  border-radius: 8px;
+  border: 2px def.$primary-color solid;
+  z-index: 1;
+  transition: transform 300ms ease;
+
+  &:focus {
+    left: 50%;
+    transform: translate(-50%, 100%);
+  }
+}

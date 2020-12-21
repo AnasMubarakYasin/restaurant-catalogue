@@ -1,0 +1,168 @@
+@use '_default' as def;
+
+@mixin option {
+  @include def.box-shadow();
+  position: -webkit-sticky;
+  position: sticky;
+  top: 8px;
+  display: flex;
+  flex-flow: row wrap;
+  margin: 8px;
+  padding: 16px;
+  border-radius: 8px;
+  color: def.$on-surface;
+  background-color: def.$surface-color;
+  z-index: 1;
+
+  .order {
+    position: relative;
+    flex: 1 0 auto;
+
+    .btn {
+      @include def.btn-custom(inherit, white, 0, 0 16px, 8px);
+      position: relative;
+      border: 1px rgba(0, 0, 0, 0.100) solid;
+      border-radius: 8px;
+      z-index: 4;
+      transition: box-shadow 300ms ease;
+
+      &:hover {
+        box-shadow: 0 0 0 2px def.$primary-color;
+
+        .text {
+          opacity: 1;
+        }
+      }
+      .text {
+        font-weight: 400;
+        font-size: 16px;
+        opacity: .7;
+      }
+      .md-icons {
+        justify-self: end;
+        opacity: .7;
+      }
+    }
+    .list {
+      @include def.reset-list-style;
+      position: absolute;
+      top: 0;
+      transform-origin: top;
+      transform: translate(0, 0) scale(0, 0);
+      visibility: hidden;
+      display: flex;
+      flex-flow: column;
+      padding: 8px 0;
+      background-color: def.$surface-color;
+      border: 1px rgba(0, 0, 0, 0.100) solid;
+      border-radius: 8px;
+      overflow: hidden;
+      will-change: transform, visibility;
+
+      .item {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background-color: darken($color: def.$surface-color, $amount: 10%);
+        }
+        .link {
+          @include def.link-custom(0, 0 16px);
+        }
+      }
+    }
+
+    .list.show {
+      -webkit-animation: show 1s ease 0s 1 normal forwards;
+              animation: show 1s ease 0s 1 normal forwards;
+    }
+    .list.hide {
+      -webkit-animation: hide 1s ease 0s 1 normal forwards;
+              animation: hide 1s ease 0s 1 normal forwards;
+    }
+    @-webkit-keyframes show {
+      0% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      45% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      100% {
+        visibility: visible;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+    }
+    @keyframes show {
+      0% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      45% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      100% {
+        visibility: visible;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+    }
+    @-webkit-keyframes hide {
+      0% {
+        visibility: visible;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      45% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      100% {
+        visibility: hidden;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+    }
+    @keyframes hide {
+      0% {
+        visibility: visible;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 1);
+      }
+      45% {
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+      100% {
+        visibility: hidden;
+        transform-origin: top;
+        transform: translate(0, 50%) scale(1, 0);
+      }
+    }
+  }
+  .view {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: auto;
+    -moz-column-gap: 4px;
+         column-gap: 4px;
+
+    .btn {
+      @include def.btn-custom();
+      border-radius: 8px;
+      border: 1px rgba(0, 0, 0, 0.100) solid;
+      opacity: .7;
+      transition: box-shadow 300ms ease;
+
+      &:hover {
+        box-shadow: 0 0 0 2px def.$primary-color;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.option-bar {
+  @include option();
+}

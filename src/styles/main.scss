@@ -1,0 +1,44 @@
+@use '_default' as def;
+
+html {
+  font-family: def.$font;
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 100vh;
+  margin: 0;
+  scrollbar-width: thin;
+  scrollbar-color: def.$primary-color;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 13px;
+}
+::-webkit-scrollbar-button {
+  background: def.$background-color;
+}
+::-webkit-scrollbar-track {
+  background: def.$background-color;
+} 
+::-webkit-scrollbar-thumb {
+  background-color: def.$tersier-color ;
+  border-radius: 6px;
+  border: 2px solid def.$background-color;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: def.$primary-color;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+hr{
+  padding: 0;
+  margin: 16px 0;
+  border: none;
+  border-bottom: .1px solid lighten($color: def.$on-surface, $amount: 70%);
+}

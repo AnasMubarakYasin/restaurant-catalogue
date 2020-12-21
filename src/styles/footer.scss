@@ -1,0 +1,19 @@
+@use '_default' as def;
+
+.footer {
+  color: def.$on-secondary;
+  background-color: def.$tersier-color;
+  display: flex;
+  flex-flow: column wrap;
+  text-align: center;
+  height: 64px;
+  
+  .text {
+    margin: auto;
+    font-size: 14px;
+
+    @media #{def.$media-small-up} {
+      font-size: 16px;
+    }
+  }
+}

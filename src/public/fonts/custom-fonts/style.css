@@ -1,0 +1,291 @@
+@font-face {
+  font-family: 'custom-font';
+  /* font-display: optional; */
+  font-display: swap;
+  src:
+    url('custom-font.ttf?el438w') format('truetype'),
+    url('custom-font.woff?el438w') format('woff'),
+    /* url('custom-font.svg?el438w#custom-font') format('svg'); */;
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.custom-icons {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'custom-font';
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -ms-font-feature-settings: "liga" 1;
+  font-feature-settings: "liga";
+  font-variant-ligatures: discretionary-ligatures;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.adobexd:before {
+  content: "\e901";
+  color: #ff2bc2;
+}
+.angular:before {
+  content: "\e917";
+  color: #dd0031;
+}
+.atom:before {
+  content: "\e918";
+  color: #66595c;
+}
+.bootstrap:before {
+  content: "\e919";
+  color: #563d7c;
+}
+.c:before {
+  content: "\e91b";
+  color: #a8b9cc;
+}
+.codepen:before {
+  content: "\e91a";
+}
+.cplusplus:before {
+  content: "\e91c";
+  color: #00599c;
+}
+.csharp:before {
+  content: "\e91d";
+  color: #239120;
+}
+.css3:before {
+  content: "\e902";
+  color: #1572b6;
+}
+.dart:before {
+  content: "\e91e";
+  color: #0175c2;
+}
+.dot-net:before {
+  content: "\e91f";
+  color: #5c2d91;
+}
+.facebook:before {
+  content: "\e90b";
+  color: #1877f2;
+}
+.figma:before {
+  content: "\e920";
+  color: #f24e1e;
+}
+.flutter:before {
+  content: "\e921";
+  color: #02569b;
+}
+.git:before {
+  content: "\e90c";
+  color: #f05032;
+}
+.github:before {
+  content: "\e903";
+}
+.gmail:before {
+  content: "\e90d";
+  color: #d14836;
+}
+.googlechrome:before {
+  content: "\e904";
+  color: #4285f4;
+}
+.hp:before {
+  content: "\e90e";
+  color: #0096d6;
+}
+.html5:before {
+  content: "\e905";
+  color: #e34f26;
+}
+.icomoon:before {
+  content: "\e93c";
+  color: #825794;
+}
+.inkscape:before {
+  content: "\e922";
+}
+.instagram:before {
+  content: "\e90f";
+  color: #e4405f;
+}
+.intel:before {
+  content: "\e93d";
+  color: #0071c5;
+}
+.ionic:before {
+  content: "\e923";
+  color: #3880ff;
+}
+.ios:before {
+  content: "\e924";
+}
+.java:before {
+  content: "\e925";
+  color: #007396;
+}
+.javascript:before {
+  content: "\e906";
+  color: #f7df1e;
+}
+.kotlin:before {
+  content: "\e93e";
+  color: #0095d5;
+}
+.linkedin:before {
+  content: "\e910";
+  color: #0077b5;
+}
+.mdnwebdocs:before {
+  content: "\e926";
+}
+.microsoftteams:before {
+  content: "\e940";
+  color: #6264a7;
+}
+.mozillafirefox:before {
+  content: "\e942";
+  color: #ff7139;
+}
+.nativescript:before {
+  content: "\e943";
+  color: #3655ff;
+}
+.node-dot-js:before {
+  content: "\e907";
+  color: #393;
+}
+.npm:before {
+  content: "\e908";
+  color: #cb3837;
+}
+.php:before {
+  content: "\e944";
+  color: #777bb4;
+}
+.postgresql:before {
+  content: "\e927";
+  color: #336791;
+}
+.postman:before {
+  content: "\e945";
+  color: #ff6c37;
+}
+.python:before {
+  content: "\e928";
+  color: #3776ab;
+}
+.quora:before {
+  content: "\e929";
+  color: #b92b27;
+}
+.react:before {
+  content: "\e92a";
+  color: #61dafb;
+}
+.redux:before {
+  content: "\e92b";
+  color: #764abc;
+}
+.ruby:before {
+  content: "\e92c";
+  color: #cc342d;
+}
+.sass:before {
+  content: "\e92d";
+  color: #c69;
+}
+.stackoverflow:before {
+  content: "\e92e";
+  color: #fe7a16;
+}
+.svelte:before {
+  content: "\e92f";
+  color: #ff3e00;
+}
+.svg:before {
+  content: "\e930";
+  color: #ffb13b;
+}
+.swift:before {
+  content: "\e931";
+  color: #fa7343;
+}
+.tailwindcss:before {
+  content: "\e932";
+  color: #38b2ac;
+}
+.telegram:before {
+  content: "\e911";
+  color: #2ca5e0;
+}
+.tensorflow:before {
+  content: "\e933";
+  color: #ff6f00;
+}
+.tor:before {
+  content: "\e934";
+  color: #7e4798;
+}
+.trello:before {
+  content: "\e935";
+  color: #0079bf;
+}
+.twitter:before {
+  content: "\e912";
+  color: #1da1f2;
+}
+.typescript:before {
+  content: "\e900";
+  color: #007acc;
+}
+.unity:before {
+  content: "\e936";
+}
+.unrealengine:before {
+  content: "\e937";
+}
+.v8:before {
+  content: "\e916";
+  color: #4b8bf5;
+}
+.visualstudiocode:before {
+  content: "\e909";
+  color: #007acc;
+}
+.vue-dot-js:before {
+  content: "\e938";
+  color: #4fc08d;
+}
+.w3c:before {
+  content: "\e939";
+  color: #005a9c;
+}
+.webpack:before {
+  content: "\e90a";
+  color: #8dd6f9;
+}
+.whatsapp:before {
+  content: "\e913";
+  color: #25d366;
+}
+.windows:before {
+  content: "\e914";
+  color: #0078d6;
+}
+.youtube:before {
+  content: "\e915";
+  color: #f00;
+}

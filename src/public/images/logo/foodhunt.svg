@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="512"
+   height="512"
+   viewBox="0 0 135.46666 135.46667"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="foodhunt.svg"
+   inkscape:export-filename="C:\Users\blade\OneDrive\Desktop\foodhunt.png"
+   inkscape:export-xdpi="299.99921"
+   inkscape:export-ydpi="299.99921">
+  <title
+     id="title1108">FoodHunt</title>
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="173.38963"
+     inkscape:cy="98.56868"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     inkscape:pagecheckerboard="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="1360"
+     inkscape:window-height="705"
+     inkscape:window-x="1358"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>FoodHunt</dc:title>
+        <dc:date>9/3/2020</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Anas Mubarak Yasin Mas'ud</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:language>Indonesia</dc:language>
+        <dc:subject>
+          <rdf:Bag />
+        </dc:subject>
+        <dc:description>Logo of FoodHunt</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g1106">
+      <rect
+         ry="43.393589"
+         rx="43.391666"
+         y="0.001139493"
+         x="0.00014530651"
+         height="135.46666"
+         width="135.46667"
+         id="rect947"
+         style="opacity:0.9935;fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:0.52918;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      <g
+         id="g1097"
+         transform="translate(0,-0.89217956)">
+        <path
+           sodipodi:nodetypes="cccccc"
+           d="m 51.917219,85.132122 h 31.604282 v 8.073076 c 0,0 0.01142,3.228061 -16.157885,3.70349 -15.435476,-0.475429 -15.446397,-3.70349 -15.446397,-3.70349 z"
+           style="opacity:0.9935;fill:#d45500;fill-rule:evenodd;stroke:#333333;stroke-width:9.26042;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect837" />
+        <path
+           d="m 65.256672,43.171239 a 13.512776,13.583386 0 0 0 -11.443496,6.361814 8.5565849,8.6012974 0 0 0 -2.556237,-0.393878 8.5565849,8.6012974 0 0 0 -8.556274,8.601488 8.5565849,8.6012974 0 0 0 8.556274,8.60149 8.5565849,8.6012974 0 0 0 3.669384,-0.830714 A 13.512776,13.583386 0 0 0 65.256672,70.33858 13.512776,13.583386 0 0 0 78.769405,56.754913 13.512776,13.583386 0 0 0 65.256672,43.171239 Z"
+           style="opacity:0.9935;fill:#ffb380;fill-rule:evenodd;stroke:#333333;stroke-width:9.26042;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="path853" />
+        <rect
+           transform="matrix(0.65186862,-0.75833192,0.75544171,0.65521586,0,0)"
+           rx="2.2930064"
+           ry="2.2930064"
+           y="104.61234"
+           x="-7.9631681"
+           height="4.5860128"
+           width="50.912792"
+           id="rect891"
+           style="opacity:0.9935;fill:#333333;fill-rule:evenodd;stroke:#333333;stroke-width:0.529169;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+        <rect
+           style="opacity:0.9935;fill:#333333;fill-rule:evenodd;stroke:#333333;stroke-width:0.529169;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+           id="rect891-2"
+           width="50.912792"
+           height="4.5860128"
+           x="-45.334194"
+           y="99.880089"
+           ry="2.2930064"
+           rx="2.2930064"
+           transform="matrix(0.40004903,-0.91649374,0.91471563,0.40409816,0,0)" />
+        <path
+           d="M 98.887566,58.153145 A 31.168198,30.076611 0 0 1 67.724304,88.229755 31.168198,30.076611 0 0 1 36.551172,58.162672 l 31.168196,-0.0095 z"
+           sodipodi:arc-type="slice"
+           sodipodi:end="3.1412759"
+           sodipodi:start="0"
+           sodipodi:ry="30.076611"
+           sodipodi:rx="31.168198"
+           sodipodi:cy="58.153145"
+           sodipodi:cx="67.719368"
+           sodipodi:type="arc"
+           id="path833"
+           style="fill:#ff7f2a;fill-rule:evenodd;stroke:#333333;stroke-width:9.26042;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      </g>
+    </g>
+  </g>
+</svg>

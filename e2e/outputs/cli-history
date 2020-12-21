@@ -1,0 +1,89 @@
+
+
+<<< Recorded commands on Sun Dec 20 2020 00:21:38 GMT+0800 (Central Indonesia Time)
+I.seeElement('reviewer-component');
+I.seeElement('review-component')
+I.click({ shadow: ['review-component'] });
+I.click({ shadow: ['review-component'] });
+I.seeElement({ shadow: ['review-component', '.name'] });
+I.seeElement({ shadow: ['review-component', 'h1'] });
+I.seeElement({ shadow: ['review-component', 'h2'] });
+I.seeElement({ shadow: ['review-component', 'input'] });
+I.click({shadow: ['review-component']})
+I.click({shadow: ['review-component', '.btn-edit']})
+I.l
+I.click({shadow: ['review-component', '.btn-edit']})
+I.click({shadow: ['review-component', '.btn-edit']})
+I.fillField({shadow: ['review-component', '.name']}, 'test');
+I.click({ shadow: ['review-component', '.review', '.account', '.name'] })
+I.click({ shadow: ['review-component', '.review', '.account', '.btn-edit .md-icons'] })
+I.click({ shadow: ['review-component', '.review', '.account', '.btn-edit'] })
+I.click({ shadow: ['review-component', '.review', '.account', '.btn-edit'] })
+
+<<< Recorded commands on Sun Dec 20 2020 00:50:34 GMT+0800 (Central Indonesia Time)
+I.click({shadow: ['review-component', '.btn-edit']})
+I.fillField({shadow: ['review-component', '.message']}, '.')
+I.fillField({shadow: ['review-component', '.message']}, '.')
+I.click({shadow: ['review-component', '.btn-edit']})
+I.click({shadow: ['review-component', '.btn-send']})
+I.click({shadow: ['review-component', '.btn-send']})
+
+<<< Recorded commands on Sun Dec 20 2020 01:38:32 GMT+0800 (Central Indonesia Time)
+I.click('Melting Pot')
+
+<<< Recorded commands on Sun Dec 20 2020 01:40:14 GMT+0800 (Central Indonesia Time)
+I.see('Reviewer')
+
+<<< Recorded commands on Sun Dec 20 2020 02:58:03 GMT+0800 (Central Indonesia Time)
+I.click('edit', 'review-component button')
+I.fillField('review-component h1', 'anas')
+I.fillField('review-component h1', '')
+I.fillField('review-component h1', 'anas')
+
+<<< Recorded commands on Sun Dec 20 2020 03:54:59 GMT+0800 (Central Indonesia Time)
+I.see('Ahmad', locate('reviewer-component h1'))
+
+<<< Recorded commands on Sun Dec 20 2020 04:44:19 GMT+0800 (Central Indonesia Time)
+I.see('Test 3', locate('reviewer-component .session'))
+I.see('Test 3', locate('reviewer-component .reviewer'))
+I.see('Test 3', locate('reviewer-component .reviewer'))
+I.grabTextFrom('reviewer-component .session')
+I.grabTextFrom(locate('reviewer-component .session'))
+I.grabTextFrom(locate('reviewer-component .reviewer'))
+I.grabTextFrom(locate('reviewer-component div'))
+I.grabTextFrom(locate('reviewer-component div div'))
+I.grabTextFrom(locate('reviewer-component div p'))
+I.grabTextFrom(locate('reviewer-component div h1'))
+I.grabTextFrom(locate('reviewer-component div div  h1'))
+I.grabTextFrom(locate('reviewer-component div div:last-child'))
+I.grabTextFrom(locate('reviewer-component div div:last-child h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-last-child(3) h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-last-child(2) h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-last-child(4) h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-last-child(3) h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-last-child(1) h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-child(3) h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-child(4) h1'))
+I.grabTextFrom(locate('reviewer-component div div:nth-child(4) h1'))
+I.grabTextFrom(locate('reviewer-component div div:last-child h1'))
+I.grabTextFrom(locate('reviewer-component div div:last-child h1'))
+I.grabTextFrom(locate('reviewer-component div .session:last-child .name'))
+I.grabTextFrom(locate('reviewer-component .session:last-child .name'))
+I.grabTextFrom(locate('reviewer-component .session:last-child h1'))
+I.grabTextFrom(locate('reviewer-component .session:last-child'))
+I.grabTextFrom(locate('reviewer-component .session:last-child'))
+I.grabTextFrom(locate('reviewer-component .session:last-child .name'))
+
+<<< Recorded commands on Sun Dec 20 2020 05:41:54 GMT+0800 (Central Indonesia Time)
+I.fillField('review-component .name', '')
+I.fillField('review-component .name', ' ')
+I.fillField('review-component .name', '')
+I.fillField('review-component .name', '  ')
+
+<<< Recorded commands on Sun Dec 20 2020 06:16:21 GMT+0800 (Central Indonesia Time)
+I.dontSee('Test 7', 'reviewer-component')
+I.dontSee('Test 7', 'reviewer-component .session')
+
+<<< Recorded commands on Sun Dec 20 2020 06:27:31 GMT+0800 (Central Indonesia Time)
+I.Prefix
+I.within
